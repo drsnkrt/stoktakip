@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dursun.ui.PersonelController">
+    <children>
+        <ImageView fx:id="iVAvatar" fitHeight="150.0" fitWidth="125.0" layoutX="370.0" layoutY="20.0" onMouseClicked="#chooseImage" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="20.0" />
+        <TableView fx:id="personelTV" layoutX="10.0" layoutY="20.0" onMouseClicked="#fillFields" prefHeight="550.0" prefWidth="350.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0">
+            <columns>
+                <TableColumn fx:id="tckn" prefWidth="141.0" text="T.C Kimlik Numarası" />
+                <TableColumn fx:id="name" minWidth="9.0" prefWidth="102.0" text="Ad" />
+                <TableColumn fx:id="surname" minWidth="9.0" prefWidth="105.0" text="Soyad" />
+            </columns>
+        </TableView>
+        <Label layoutX="522.0" layoutY="24.0" text="T.C Kimlik Numarası" AnchorPane.leftAnchor="522.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="24.0" />
+        <TextField fx:id="txtTckn" layoutX="640.0" layoutY="20.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0" />
+        <TextField fx:id="txtName" layoutX="640.0" layoutY="55.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.topAnchor="55.0" />
+        <TextField fx:id="txtSurname" layoutX="640.0" layoutY="90.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.topAnchor="90.0" />
+        <TextField fx:id="txtPhone" layoutX="640.0" layoutY="125.0" onKeyReleased="#setPhoneFormat" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="125.0" />
+        <TextField fx:id="txtEmail" layoutX="640.0" layoutY="160.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="160.0" />
+        <Label layoutX="615.0" layoutY="59.0" text="Ad" AnchorPane.rightAnchor="170.0" />
+        <Label layoutX="597.0" layoutY="94.0" text="Soyad" AnchorPane.rightAnchor="170.0" />
+        <Label layoutX="562.0" layoutY="129.0" text="Cep Telefonu" AnchorPane.rightAnchor="167.0" />
+        <Label layoutX="599.0" layoutY="164.0" text="Email" AnchorPane.rightAnchor="172.0" />
+        <Label layoutX="376.0" layoutY="205.0" text="Nüfusa Kayıtlı Olduğu" AnchorPane.leftAnchor="376.0" AnchorPane.topAnchor="205.0" />
+        <Label layoutX="642.0" layoutY="234.0" text="İlçe" AnchorPane.rightAnchor="140.0" />
+        <Label layoutX="463.0" layoutY="234.0" text="İl" AnchorPane.rightAnchor="350.0" />
+        <ComboBox fx:id="cBCity" layoutX="480.0" layoutY="229.0" onAction="#getTownById" prefWidth="120.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="230.0" />
+        <ComboBox fx:id="cBTown" layoutX="670.0" layoutY="230.0" prefWidth="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="230.0" />
+        <Separator layoutX="498.0" layoutY="208.0" prefHeight="11.0" prefWidth="292.0" AnchorPane.rightAnchor="10.0" />
+        <ComboBox fx:id="cBMaritalStatus" layoutX="480.0" layoutY="265.0" prefWidth="120.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="265.0" />
+        <Label layoutX="390.0" layoutY="269.0" text="Medeni Durum" AnchorPane.rightAnchor="350.0" />
+        <Label layoutX="413.0" layoutY="302.0" text="Kan Grubu" AnchorPane.rightAnchor="350.0" />
+        <ComboBox fx:id="cBBloodGroup" layoutX="480.0" layoutY="300.0" prefWidth="120.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="300.0" />
+        <Label layoutX="628.0" layoutY="269.0" text="Unvan" AnchorPane.rightAnchor="138.0" />
+        <ComboBox fx:id="cBTitle" layoutX="670.0" layoutY="265.0" prefWidth="120.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="265.0" />
+        <TextArea fx:id="txtAddress" layoutX="480.0" layoutY="335.0" prefHeight="165.0" prefWidth="330.0" promptText="Adres" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="370.0" />
+        <Label layoutX="419.0" layoutY="377.0" text="Adres" AnchorPane.rightAnchor="350.0" />
+        <Button fx:id="btnSave" layoutX="640.0" layoutY="545.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="160.0" text="Kaydet" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="545.0" />
+        <Button fx:id="btnRefresh" layoutX="460.0" layoutY="545.0" mnemonicParsing="false" onAction="#refreshPersonelTable" prefWidth="160.0" text="Tabloyu Yenile" />
+        <Label layoutX="595.0" layoutY="302.0" text="Kayıt Durumu" AnchorPane.rightAnchor="140.0" />
+        <ComboBox fx:id="cBRecordStatus" layoutX="668.0" layoutY="298.0" prefWidth="120.0" AnchorPane.rightAnchor="10.0" />
+        <DatePicker fx:id="dpBirthDate" layoutX="460.0" layoutY="338.0" promptText="GG.AA.YYYY" />
+        <Label layoutX="393.0" layoutY="342.0" text="Doğum Tarihi" AnchorPane.rightAnchor="350.0" />
+        <TextField fx:id="txtSearch" layoutX="14.0" layoutY="8.0" onKeyPressed="#search" prefHeight="25.0" prefWidth="150.0" promptText="Search..." AnchorPane.leftAnchor="10.0" />
+    </children>
+</AnchorPane>

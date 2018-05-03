@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0"
+            prefWidth="471.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dursun.ui.RamController">
+    <children>
+        <Label layoutX="39.0" layoutY="47.0" text="Marka"/>
+        <Label layoutX="261.0" layoutY="47.0" text="Tip"/>
+        <Label layoutX="14.0" layoutY="84.0" text="Stok Giriş Tarihi"/>
+        <Button fx:id="btnSave" layoutX="261.0" layoutY="80.0" mnemonicParsing="false" onAction="#kaydet"
+                prefHeight="25.0" prefWidth="65.0" text="Kaydet"/>
+        <TableView fx:id="ramTable" layoutX="16.0" layoutY="118.0" onMouseClicked="#fillValues" prefHeight="213.0"
+                   prefWidth="438.0">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="ID"/>
+                <TableColumn fx:id="brand" prefWidth="75.0" text="BRAND"/>
+                <TableColumn fx:id="type" prefWidth="75.0" text="TYPE"/>
+                <TableColumn fx:id="inStockDate" prefWidth="122.0" text="IN STOCK DATE"/>
+            </columns>
+        </TableView>
+        <Button fx:id="btnGetAll" layoutX="337.0" layoutY="80.0" mnemonicParsing="false" onAction="#getRams"
+                 prefHeight="25.0" prefWidth="111.0" text="Kayıtları getir"/>
+        <DatePicker fx:id="DPDate" layoutX="102.0" layoutY="80.0" prefHeight="25.0" prefWidth="137.0"
+                    promptText="Tarih seçiniz">
+            <opaqueInsets>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+            </opaqueInsets>
+        </DatePicker>
+        <ComboBox fx:id="cbType" layoutX="313.0" layoutY="43.0" prefHeight="25.0" prefWidth="137.0"/>
+        <TextField fx:id="txtBrand" layoutX="96.0" layoutY="43.0" prefHeight="25.0" prefWidth="137.0"/>
+        <Label layoutX="56.0" layoutY="14.0" text="Id"/>
+        <Label fx:id="lblId" layoutX="97.0" layoutY="14.0" textFill="#2c2cd7"/>
+    </children>
+</AnchorPane>

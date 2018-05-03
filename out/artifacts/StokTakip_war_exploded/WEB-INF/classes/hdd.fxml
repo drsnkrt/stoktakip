@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="471.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dursun.ui.HddController">
+    <children>
+        <TableView fx:id="hddTable" layoutX="17.0" layoutY="52.0" prefHeight="213.0" prefWidth="438.0" styleClass="jfx-text-field">
+            <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="brand" onEditCommit="#changeBrand" prefWidth="75.0" text="BRAND" />
+                <TableColumn fx:id="model" onEditCommit="#changeModel" prefWidth="75.0" text="MODEL" />
+                <TableColumn fx:id="inStockDate" onEditCommit="#changeDate" prefWidth="122.0" text="IN STOCK DATE" />
+                <TableColumn fx:id="status" prefWidth="90.0" text="STATUS" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnRefresh" layoutX="338.0" layoutY="14.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="111.0" text="Yenile" />
+      <TextField fx:id="txtSearch" layoutX="14.0" layoutY="14.0" onKeyPressed="#search" promptText="Search" />
+    </children>
+</AnchorPane>

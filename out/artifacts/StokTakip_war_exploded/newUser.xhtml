@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title> PrimeFaces 5 Spotlight Example </title>
+</h:head>
+<h:body>
+
+
+    <h3> Yeni Kullanıcı </h3>
+    <p:panel id="newUserPanel" header="Kullanıcı Bilgileri" style="margin-top:5px">
+        <h:form>
+            <h:panelGrid columns="2" id="pgrid" cellpadding="5">
+                <p:outputLabel value="Adı:"/>
+                <p:inputText id="firstName" value="#{saveController.firstName}"/>
+                <p:outputLabel value="Soyadı:"/>
+                <p:inputText id="lastName" value="#{saveController.lastName}"/>
+                <p:outputLabel value="D.Tarihi:"/>
+                <p:calendar id="birthDate" value="#{saveController.birthDate}"/>
+            </h:panelGrid>
+            <p:commandButton value="Save" icon="ui-icon-check" action="#{saveController.saveNewUser}"/>
+        </h:form>
+
+    </p:panel>
+
+
+</h:body>
+</html>

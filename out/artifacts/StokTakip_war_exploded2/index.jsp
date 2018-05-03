@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+
+  <p:dataTable var="p" value="#{controller.all}" style="width: 100%; height: 100%">
+    <p:column headerText="Id">
+      <h:outputText value="#{p.tckn}"/>
+    </p:column>
+
+    <p:column headerText="Adı">
+      <h:outputText value="#{p.name}"/>
+    </p:column>
+
+    <p:column headerText="Soyadı">
+      <h:outputText value="#{p.surName}"/>
+    </p:column>
+
+    <p:column headerText="D.Tarihi">
+      <h:outputLabel value="#{p.maritalStatus}"/>
+    </p:column>
+  </p:dataTable>
+
+</h:body>
+</html>
